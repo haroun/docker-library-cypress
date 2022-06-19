@@ -1,0 +1,18 @@
+services:
+  cypress:
+    image: cypress/included:10.1.0
+    environment:
+      - DISPLAY
+    depends_on:
+      - novnc
+    entrypoint: []
+    command: bash -c 'npx wait-on http://novnc:8080 && mongod --fork --logpath /var/log/mongodb.log && CI=1 cypress open --project /srv/www/e2e'
+    working_dir: /srv/www/e2e
+  novnc:
+    image: theasp/novnc:latest
+    environment:
+      - DISPLAY_WIDTH
+      - DISPLAY_HEIGHT
+    ports:
+      - "8080:8080"
+
