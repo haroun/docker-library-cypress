@@ -8,6 +8,11 @@ From https://github.com/dtinth/cypress-docker-novnc, thank you.
 docker compose up -d
 ```
 
+## todo
+
+* [ ] run as non-root user (https://crbug.com/638180, https://github.com/cypress-io/cypress/issues/5434,
+    https://github.com/electron/electron/issues/17972)
+
 ## usage
 
 Access desktop env using
