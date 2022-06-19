@@ -23,6 +23,7 @@ services:
   cypress:
     build:
       context: cypress-with-mongo
+    command: bash -c 'npx wait-on http://novnc:8080 && mongod --fork --logpath /var/log/mongodb.log && cypress open --project /srv/www/e2e'
 ```
 
 ```sh
