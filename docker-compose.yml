@@ -1,6 +1,9 @@
 services:
   cypress:
     image: cypress/included:10.1.0
+    build:
+      context: .
+      target: cypress
     environment:
       - DISPLAY
     depends_on:
